@@ -16,5 +16,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     });
 
-
+    
+    pop.image({
+        // seconds
+        start: 3,
+        // seconds
+        end: 5,
+       href: "http://chiquita.com/",
+       src: "http://images.halloweencostumes.com/products/11904/1-1/adult-chiquita-banana-costume.jpg",
+      target: "imagediv"
+     });
+ 
+    pop.cue(5, function(){
+       pop.pause(300); 
+        
+    });
+     
+    
 });

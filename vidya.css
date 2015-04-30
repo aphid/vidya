@@ -10,11 +10,13 @@ body {
     position: relative;
 }
 
+#imagediv { position: absolute; top: 3px; right: 3px; }
+#imagediv img { height: 100px; }
 #title {
     position: absolute;
     top: 3px;
     left: 3px;
     color: papayawhip;
-    transition: all 1s cubic-bezier(0, 0, .81, -0.05);
+    transition: all 1s linear;
     text-shadow: 5px 5px 5px black;
 }
