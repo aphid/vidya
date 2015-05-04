@@ -14,11 +14,19 @@
 <body>
     <section id="content">
         <h1 id="title">BANANAS</h1>
-        <video id="tehvidya" controls>
-            <source src="https://archive.org/download/AboutBan1935/AboutBan1935.ogv"> <source src="https://archive.org/download/AboutBan1935/AboutBan1935_edit.mp4">
+        <canvas id="thecanvas"></canvas>
+        <video id="tehvidya">
+            <source id="ogg" src="https://archive.org/download/AboutBan1935/AboutBan1935.ogv">
+                <source id="mp4" src="https://archive.org/download/AboutBan1935/AboutBan1935_edit.mp4">
 
         </video>
+        <audio id="burroughs" src="https://archive.org/download/naropa_william_s_burroughs_lecture_on/naropa_william_s_burroughs_lecture_on_64kb.mp3" controls></audio>
         <div id="imagediv"></div>
+        <label for=fader>Volume</label>
+
+        <input type=range min=0 max=1 value=1 id=fader step=0.01 oninput="outputUpdate(value)">
+
+        <output for=fader id=volume>1</output>
     </section>
 </body>
 
