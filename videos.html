@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>vidya!</title>
+
+    <style>
+    #video2 { display: none; }
+  </style>
+
+    <script src="http://cdn.popcornjs.org/code/dist/popcorn-complete.min.js"></script>
+
+  <script>
+var video1, video2, pop1, pop2
+
+  document.addEventListener("DOMContentLoaded", function (event) {
+  ready();
+  
+    
+  });
+  
+function ready() {
+    video1 = document.querySelector("#video1");
+    video2 = document.querySelector("#video2");
+
+    pop1 = Popcorn("#video1");
+    pop2 = Popcorn("#video2");
+    pop1.on("loadedmetadata", function () {
+        pop1.play();
+        
+    }); 
+  
+    pop1.cue(5, function(){
+      this.pause();
+      video1.style.display = "none";
+      video2.style.display = "block";
+      pop2.play(15);
+      
+    });
+  
+  pop2.cue(30, function(){
+      this.pause();
+      video2.style.display = "none";  
+      video1.style.display = "block";
+      pop1.play(50);
+  });
+  
+}
+  
+  </script>
+  
+</head>
+
+<body>
+    <section id="content">
+        <h1 id="title">BANANAS</h1>
+        <video id="video1">
+            <source id="ogg" src="https://archive.org/download/AboutBan1935/AboutBan1935.ogv">
+                <source id="mp4" src="https://archive.org/download/AboutBan1935/AboutBan1935_edit.mp4">
+
+        </video>
+      <video id="video2">
+      <source src="https://archive.org/download/HealthYo1953/HealthYo1953.ogv">
+        <source src="https://archive.org/download/HealthYo1953/HealthYo1953_512kb.mp4">
+      </video>
+  </section>
+</body>
+
+</html>
